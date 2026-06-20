@@ -1,0 +1,16 @@
+﻿##-Semillas-##
+item.pxq:graine.jaune=Semilla de Gysahl Amarilla
+
+##-Fruta-##
+item.pxq:gysahl.jaune=Gysahl Amarilla
+item.pxq:gysahl.or=Gysahl Dorada
+
+##-Comida-##
+item.pxq:cuisse.choco=Muslo de Chocobo
+item.pxq:cuite.cuisse.choco=Muslo de Chocobo Cocido
+item.pxq:curry.choco=Curry de Chocobo
+
+##-Entidad-##
+item.spawn_egg.entity.pxq:chocobo.name=Huevo Generador de Chocobo
+
+entity.pxq:chocobo.name=Chocobo

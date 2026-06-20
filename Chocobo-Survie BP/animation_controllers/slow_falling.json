@@ -1,0 +1,32 @@
+{
+ "format_version": "1.10.0",
+ "animation_controllers": {
+   "controller.animation.chocobo-tombe-lentement":{
+      "states":{
+          "default":{
+              "transitions":[
+                  {
+                      "jumping": "query.is_on_ground == 0 && query.vertical_speed > 0.5"
+                  }
+              ]
+          },
+          "jumping":{
+              "transitions":[
+                  {
+                      "default":"query.is_on_ground"
+                  }
+              ],
+              "on_entry":[
+                  "/effect @s slow_falling 1000 0 true",
+                  "/effect @s speed 1000 10 true"
+              ],
+              "on_exit":[
+                  "/effect @s clear"
+              ]
+          }
+      }
+  }
+  
+
+ }
+}

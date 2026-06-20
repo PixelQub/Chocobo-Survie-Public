@@ -1,0 +1,33 @@
+
+{
+  "format_version": "1.21.10",
+  "minecraft:item": {
+      "description": {
+          "identifier": "pxq:cuite.cuisse.choco",
+          "menu_category": {
+        "category": "equipment",
+        "group": "itemGroup.name.cookedFood"
+          }
+      },
+      "components": {
+
+          "minecraft:icon": {
+              "textures": {
+                  "default":"cuite.cuisse.choco"
+              }
+          },
+          "minecraft:display_name": {
+              "value": "Cuisse cuite de chocobo"
+          },
+          "minecraft:food": {
+              "can_always_eat": true,
+              "nutrition": 5,
+              "saturation_modifier": 0.6
+          },
+          "minecraft:use_modifiers": {
+              "use_duration": 1
+          },
+          "minecraft:use_animation":"eat"
+      }
+  }
+}

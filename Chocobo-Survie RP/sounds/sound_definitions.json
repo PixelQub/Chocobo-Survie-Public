@@ -1,0 +1,35 @@
+{
+    "format_version" : "1.14.0",
+    "sound_definitions" : {
+       "mob.choco.death" : {
+          "__use_legacy_max_distance" : "true",
+          "category" : "neutral",
+          "sounds" : [ "sounds/mob/choco/death" ]
+       },
+       "mob.choco.hurt" : {
+          "__use_legacy_max_distance" : "true",
+          "category" : "neutral",
+          "sounds" : [
+             "sounds/mob/choco/hurt1",
+             "sounds/mob/choco/hurt2",
+             "sounds/mob/choco/hurt3",
+             "sounds/mob/choco/hurt4"
+          ]
+       },
+       "mob.choco.idle" : {
+          "__use_legacy_max_distance" : "true",
+          "category" : "neutral",
+          "sounds" : [
+             "sounds/mob/choco/idle1",
+             "sounds/mob/choco/idle2",
+             "sounds/mob/choco/idle3",
+             "sounds/mob/choco/idle4"
+          ]
+       },
+       "mob.choco.takeoff" : {
+          "__use_legacy_max_distance" : "true",
+          "category" : "neutral",
+          "sounds" : [ "sounds/mob/choco/takeoff" ]
+       }
+    }
+ }

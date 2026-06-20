@@ -1,0 +1,19 @@
+{
+"format_version": "1.10.0",
+"render_controllers": {
+
+"controller.render.choco":{	
+"geometry":"Array.geos[query.is_sheared]",
+"arrays": {
+	"textures": {
+	"Array.base":["Texture.base_1","Texture.base_2","Texture.base_3"],
+	"Array.armure":["Texture.armure_1","Texture.armure_2","Texture.armure_3","Texture.armure_4","Texture.armure_5","Texture.armure_6"]
+},
+"geometries":{"Array.geos":["Geometry.default","Geometry.armure"]}},
+"materials": [{"*": "Material.default"}],
+"part_visibility": [{"chest*": "query.is_chested"},{"saddle*": "query.is_saddled"}],
+
+"textures": ["Array.base[query.variant]","Array.armure[query.mark_variant]"]
+}
+	}
+}

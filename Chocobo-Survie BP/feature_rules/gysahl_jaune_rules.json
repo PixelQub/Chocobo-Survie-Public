@@ -1,0 +1,49 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:feature_rules": {
+    "description": {
+      "identifier": "pxq:gysahl_jaune_rules",
+      "places_feature": "pxq:gysahl_jaune_feature"
+    },
+    "conditions": {
+      "placement_pass": "surface_pass",
+      "minecraft:biome_filter": [
+        {
+          "any_of": [
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "taiga"
+            },
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "snowy_taiga"
+            }
+          ]
+        }
+      ]
+    },
+    "distribution": {
+      "iterations": 5000,
+      "coordinate_eval_order": "xzy",
+      "x": {
+        "distribution": "uniform",
+        "extent": [0, 16]
+      },
+      "y": {
+        "distribution": "uniform",
+        "extent": [15, 128]
+      },
+      "z": {
+        "distribution": "uniform",
+        "extent": [0, 16]
+      }
+    },
+    "may_replace": [
+      { "name": "minecraft:spruce_leaves" },
+      { "name": "minecraft:oak_leaves" },
+      { "name": "minecraft:birch_leaves" }
+    ]
+  }
+}

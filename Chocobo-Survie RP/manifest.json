@@ -1,0 +1,17 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "§a§n(R)Chocobo_Survie",
+    "description": "§2Ajoutent des Chocobo et de la nourriture§6§n By PixelQub§r§l§7",
+    "uuid": "ee27fcef-a58e-47fd-becb-59351754446b",
+    "version": [3, 0, 0],
+    "min_engine_version": [1, 21, 10]
+  },
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "315e18ef-594a-4c6c-94e3-8c67b59f82be",
+      "version": [3, 0, 0]
+    }
+  ]
+}

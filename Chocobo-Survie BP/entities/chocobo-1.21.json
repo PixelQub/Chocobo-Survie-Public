@@ -1,0 +1,655 @@
+{
+"format_version": "1.21.40",
+"minecraft:entity":{
+"description": {
+      "identifier": "pxq:chocobo",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+          "scripts":{
+        "animate":[
+            "saute"
+        ]
+    },
+    "animations":{
+        "saute":"controller.animation.chocobo-tombe-lentement"
+    }
+},
+"component_groups":{
+
+  "var_jaune":{"minecraft:variant": { "value": 0 }},
+  "var_rouge": {"minecraft:variant": { "value": 1 }},
+  "var_bleu":  {"minecraft:variant": { "value": 2 }},
+  "est_vie": { "minecraft:health": {"value": 20}},
+  
+
+  "armure_support": { 
+    "minecraft:is_sheared": {},
+    "minecraft:is_chested": {}
+},
+  "a_selle":{
+    "minecraft:is_saddled": {},
+    "minecraft:input_ground_controlled": {},
+    "minecraft:variable_max_auto_step": {"base_value": 1.06,"controlled_value": 1.06,"jump_prevented_value": 0.56},
+    "minecraft:rideable": {
+      "seat_count": 1,
+      "crouching_skip_interact": false,
+      "family_types": ["player"],
+      "interact_text": "action.interact.ride.horse",
+      "seats": {"position": [0,1.7,-0.2]}
+    }
+},
+
+  "armure_cuire": {
+    "minecraft:mark_variant": { "value": 0 },
+    "minecraft:health": { "max": 28 },
+    "minecraft:knockback_resistance": { "value": 8 },
+    "minecraft:damage_sensor": {
+    "triggers": [
+      {
+        "on_damage": { "cause": "entity_attack" },
+        "deals_damage": "yes",
+        "damage_modifier": -3
+      },
+      {
+        "on_damage": { "cause": "fall" },
+        "deals_damage": "no"
+      }
+    ]
+  }
+},
+  "armure_fer": {
+    "minecraft:mark_variant": { "value": 1 },
+    "minecraft:health": { "max": 32 },
+    "minecraft:knockback_resistance": { "value": 16 },
+    "minecraft:damage_sensor": {
+    "triggers": [
+      {
+        "on_damage": {
+          "filters": {
+            "all_of": [
+              { "test": "is_family", "subject": "other", "value": "player" },
+              { "test": "is_owner", "subject": "other", "value": true }
+            ]
+          }
+        },
+        "deals_damage": "no"
+      },
+      {
+        "on_damage": { "cause": "entity_attack" },
+        "deals_damage": "yes",
+        "damage_multiplier": 0.5
+      },
+      {
+        "on_damage": { "cause": "fall" },
+        "deals_damage": "no"
+      }
+    ]
+  }
+},
+  "armure_or": {
+    "minecraft:mark_variant": { "value": 2 },
+    "minecraft:health": { "max": 34 },
+    "minecraft:knockback_resistance": { "value": 24 },
+    "minecraft:damage_sensor": {
+    "triggers": [
+      {
+        "on_damage": {
+          "filters": {
+            "all_of": [
+              { "test": "is_family", "subject": "other", "value": "player" },
+              { "test": "is_owner", "subject": "other", "value": true }
+            ]
+          }
+        },
+        "deals_damage": "no"
+      },
+      {
+        "on_damage": { "cause": "entity_attack" },
+        "deals_damage": "yes",
+        "damage_multiplier": 0.2
+      },
+      {
+        "on_damage": { "cause": "fall" },
+        "deals_damage": "no"
+      }
+    ]
+  }
+},
+  "armure_diamand": {
+    "minecraft:mark_variant": { "value": 3 },
+    "minecraft:health": { "max": 40 },
+    "minecraft:knockback_resistance": { "value": 24 },
+    "minecraft:damage_sensor": {
+    "triggers": [
+      {
+        "on_damage": {
+          "filters": {
+            "all_of": [
+              { "test": "is_family", "subject": "other", "value": "player" },
+              { "test": "is_owner", "subject": "other", "value": true }
+            ]
+          }
+        },
+        "deals_damage": "no"
+      },
+      {
+        "on_damage": { "cause": "entity_attack" },
+        "deals_damage": "yes",
+        "damage_multiplier": 0.08
+      },
+      {
+        "on_damage": { "cause": "fall" },
+        "deals_damage": "no"
+      }
+    ]
+  }
+},
+  "armure_copper": {
+    "minecraft:mark_variant": { "value": 4 },
+    "minecraft:health": { "max": 34 },
+    "minecraft:knockback_resistance": { "value": 24 },
+    "minecraft:damage_sensor": {
+    "triggers": [
+      {
+        "on_damage": {
+          "filters": {
+            "all_of": [
+              { "test": "is_family", "subject": "other", "value": "player" },
+              { "test": "is_owner", "subject": "other", "value": true }
+            ]
+          }
+        },
+        "deals_damage": "no"
+      },
+      {
+        "on_damage": { "cause": "entity_attack" },
+        "deals_damage": "yes",
+        "damage_multiplier": 0.2
+      },
+      {
+        "on_damage": { "cause": "fall" },
+        "deals_damage": "no"
+      }
+    ]
+  }
+},
+  "armure_netherite": {
+    "minecraft:mark_variant": { "value": 5 },
+    "minecraft:health": { "max": 40 },
+    "minecraft:knockback_resistance": { "value": 24 },
+    "minecraft:damage_sensor": {
+    "triggers": [
+      {
+        "on_damage": {
+          "filters": {
+            "all_of": [
+              { "test": "is_family", "subject": "other", "value": "player" },
+              { "test": "is_owner", "subject": "other", "value": true }
+            ]
+          }
+        },
+        "deals_damage": "no"
+      },
+      {
+        "on_damage": { "cause": "entity_attack" },
+        "deals_damage": "yes",
+        "damage_multiplier": 0.05
+      },
+      {
+        "on_damage": { "cause": "fall" },
+        "deals_damage": "no"
+      }
+    ]
+  }
+},
+
+	"est_type0":{
+    "minecraft:skin_id": {"value": 0},
+		"minecraft:movement": {"value": 0.35},
+		"minecraft:attack": {"damage": 6},
+		"minecraft:horse.jump_strength": {"value": {"range_min": 0.7,"range_max": 1.4}}
+},
+	"est_type1":{
+    "minecraft:skin_id": {"value": 1},
+		"minecraft:movement": {"value": 0.35},
+		"minecraft:attack": {"damage": 8},
+		"minecraft:horse.jump_strength": {"value": {"range_min": 1,"range_max": 6}},
+		"minecraft:fire_immune": true,
+		"minecraft:lava_movement": {"value": 0.32},
+		"minecraft:navigation.walk": {
+			"can_path_over_lava": true,
+			"avoid_water": false,
+			"can_sink": false,
+			"can_walk_in_lava": true
+		},
+		"minecraft:mob_effect": {
+			"effect_range": 1,
+			"mob_effect": "slow_falling",
+			"effect_time": 15,
+			"entity_filter": {"any_of": [{"test": "is_family","subject": "self","value": "pxq:chocobo"}]}
+		}
+},
+	"est_type2":{
+    "minecraft:skin_id": {"value": 2},
+		"minecraft:movement": {"value": 0.35},
+		"minecraft:attack": {"damage": 8},
+		"minecraft:horse.jump_strength": {"value": {"range_min": 0.4,"range_max": 1}},
+		"minecraft:floats_in_liquid": {},
+		"minecraft:water_movement": {"drag_factor": 1},
+		"minecraft:buoyant": {
+			"base_buoyancy": 0,
+			"simulate_waves": true,
+			"big_wave_probability": 0.03,
+			"big_wave_speed": 10,
+			"liquid_blocks": ["minecraft:water","minecraft:flowing_water"],
+			"apply_gravity": false,
+			"drag_down_on_buoyancy_removed": 0.6
+		}
+},
+  "est_type3":{
+    "minecraft:skin_id": {"value": 3},
+		"minecraft:movement": {"value": 0.35},
+		"minecraft:attack": {"damage": 10},
+		"minecraft:floats_in_liquid": {},
+		"minecraft:water_movement": {"drag_factor": 1},
+		"minecraft:buoyant": {
+			"base_buoyancy": 0,
+			"simulate_waves": true,
+			"big_wave_probability": 0.03,
+			"big_wave_speed": 10,
+			"liquid_blocks": ["minecraft:water","minecraft:flowing_water"],
+			"apply_gravity": false,
+			"drag_down_on_buoyancy_removed": 0.6
+		},
+    "minecraft:horse.jump_strength": {"value": {"range_min": 8,"range_max": 12}},
+		"minecraft:fire_immune": true,
+		"minecraft:lava_movement": {"value": 0.32},
+		"minecraft:navigation.walk": {
+			"can_path_over_lava": true,
+			"avoid_water": false,
+			"can_sink": false,
+			"can_walk_in_lava": true
+		},
+		"minecraft:mob_effect": {
+			"effect_range": 1,
+			"mob_effect": "fire_resistance",
+			"effect_time": 1,
+			"entity_filter": {"any_of": [{"test": "is_family","subject": "self","value": "player"}]}
+		}
+},
+  "est_bebe":{
+      "minecraft:is_baby": {},
+      "minecraft:type_family":{"family":[ "choco_baby"]},
+      "minecraft:scale": {"value":0.3},
+      "minecraft:ageable": {
+          "duration": 1200,
+          "grow_up": {
+            "event": "debuter:viellir",
+            "target": "self"
+          }   
+      }
+},
+  "est_sauvage":{
+    "minecraft:behavior.breed":{"priority": 1,"speed_multiplier": 0.4},
+    "minecraft:type_family":{"family":[ "choco_sauvage","player"]},    
+    "minecraft:behavior.nearest_attackable_target":{"priority": 2,"entity_types":
+    [
+      {
+        "filters": {"any_of": 
+          [
+            {"test":"is_family","subject" :"other","value" :"choco_sauvage"},
+            {"test":"is_family","subject" :"other","value" :"monster"},
+            {"test":"is_family","subject" :"other","value" :"player"}
+          ] 
+        },
+        "max_dist": 10
+      } 
+    ]
+  },
+    "minecraft:hurt_on_condition": {
+      "damage_conditions": [
+        {
+          "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+          "cause": "lava",
+          "damage_per_tick": 4
+        }
+      ]
+  },
+    "minecraft:behavior.panic": {
+    "priority": 4,
+    "speed_multiplier": 1
+  },
+    "minecraft:behavior.random_stroll": {
+    "priority": 4,
+    "speed_multiplier": 0.8
+  },
+    "minecraft:behavior.look_at_player": {
+    "priority": 4,
+    "look_distance": 6,
+    "probability": 0.1
+  },
+      "minecraft:leashable": {
+      "soft_distance": 4.0,
+      "hard_distance": 6.0,
+      "max_distance": 10.0,
+      "on_leash": {
+        "event": "debuter:accrocher",
+        "target": "self"
+      },
+      "on_unleash": {
+        "event": "fin:accrocher",
+        "target": "self"
+      }
+  }
+}, 
+  "est_apprivoiser":{
+    "minecraft:scale": {"value": 0.75},
+    "minecraft:is_tamed": {},
+    "minecraft:healable": {
+      "items": [
+        {
+          "item": "pxq:gysahl.or",
+          "heal_amount": 10,
+          "effects": [
+            {
+              "name": "regeneration",
+              "chance": 1.0,
+              "duration": 60,
+              "amplifier": 2
+            }
+          ]
+        },
+        {
+          "item": "golden_carrot",
+          "heal_amount": 4
+        }
+      ]
+    },
+    "minecraft:inventory": {"inventory_size": 19,"container_type": "horse"},
+    "minecraft:equippable": {
+    "slots": [
+      {
+        "slot": 0,
+        "item": "saddle",
+        "accepted_items": [ "saddle" ],
+        "on_equip":{"event":"equiper:selle"},
+        "on_unequip":{"event":"fin:selle"}
+      },
+      {
+        "slot": 1,
+        "item": "minecraft:leather_horse_armor",
+        "accepted_items": [                
+  "minecraft:leather_horse_armor",
+  "minecraft:iron_horse_armor",
+  "minecraft:golden_horse_armor",
+  "minecraft:diamond_horse_armor",
+  "minecraft:copper_horse_armor",
+  "minecraft:netherite_horse_armor"
+],
+        "on_unequip": {
+          "event": "fin:armure"
+        }
+      }
+
+    ]
+    },
+    "minecraft:environment_sensor": {
+      "triggers": [
+{ "filters": {"all_of": [ { "test": "has_equipment","value": "minecraft:leather_horse_armor" } ]}, "event": "equiper:cuire" },
+{ "filters": {"all_of": [ { "test": "has_equipment","value": "minecraft:iron_horse_armor" } ]}, "event": "equiper:fer" },
+{ "filters": {"all_of": [ { "test": "has_equipment","value": "minecraft:golden_horse_armor" } ]}, "event": "equiper:or" },
+{ "filters": {"all_of": [ { "test": "has_equipment","value": "minecraft:diamond_horse_armor" } ]}, "event": "equiper:diamand" },
+{ "filters": {"all_of": [ { "test": "has_equipment","value": "minecraft:copper_horse_armor" } ]}, "event": "equiper:copper" },
+{ "filters": {"all_of": [ { "test": "has_equipment","value": "minecraft:netherite_horse_armor" } ]}, "event": "equiper:netherite" }
+        ]
+    }
+
+},
+
+  "est_compagnion":{
+    "minecraft:type_family":{"family":[ "choco_sauvage","player","horse"]},    
+    "minecraft:behavior.nearest_attackable_target":{"priority": 2,"entity_types":
+    [
+      {
+        "filters": {"any_of": 
+          [
+            {"test":"is_family","subject" :"other","value" :"choco_sauvage"},
+            {"test":"is_family","subject" :"other","value" :"monster"},
+            {"test":"is_family","subject" :"other","value" :"player"}
+          ] 
+        },
+        "max_dist": 10
+      } 
+    ]
+    },
+    "minecraft:behavior.follow_owner": {"priority": 3,"speed_multiplier": 1,"start_distance": 9,"stop_distance": 8},
+    "minecraft:behavior.owner_hurt_by_target":{"priority": 2,"entity_types": 
+      {"filters":{"test": "is_family", "subject": "other", "value": "monster"},
+      "max_dist":10}
+    },
+    "minecraft:behavior.owner_hurt_target":{
+        "priority": 4,
+        "entity_types": {
+                "filters":{"test": "is_family", "subject": "other", "value": "monster"},
+                "max_dist":15
+        }
+    },
+    "minecraft:behavior.hurt_by_target":{
+        "priority": 3,
+        "alert_same_type":true,
+        "hurt_owner": true,
+            "entity_types": {
+                "filters":{"test": "is_family", "subject": "other", "value": "mob"},
+                "max_dist":15
+              }
+    },
+    "minecraft:interact": {
+      "interactions": [
+        {
+          "on_interact": {
+            "filters": { 
+              "any_of": [
+                { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "minecraft:wooden_sword"},
+                { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "minecraft:stone_sword"},
+                { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "minecraft:iron_sword"},
+                { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "minecraft:golden_sword"},
+                { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "minecraft:diamond_sword"},
+                { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "minecraft:netherite_sword"}
+              ]
+            },
+            "event": "fin:compagnion",
+            "target": "self"
+          },
+          "use_item": false,
+          "play_sounds": "item.trident.hit",
+          "particle_on_start": { "particle_type": "crit", "particle_y_offset": 0.25, "particle_offset_towards_interactor": true }
+        }
+    ]
+  } 
+},
+  "est_explorateur":{
+    "minecraft:interact": {
+        "interactions": [
+            {
+              "on_interact": {
+                "filters": { 
+                  "any_of": [
+
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "minecraft:wooden_sword"},
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "minecraft:stone_sword"},
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "minecraft:iron_sword"},
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "minecraft:golden_sword"},
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "minecraft:diamond_sword"},
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "minecraft:netherite_sword"}
+                  ]
+                },
+                "event": "debuter:compagnion",
+                "target": "self"
+              },
+              "use_item": false,
+              "play_sounds": "item.shield.block",
+              "particle_on_start": { "particle_type":"flame", "particle_y_offset": 1, "particle_offset_towards_interactor": true }
+            }
+        ]
+  }
+}
+},
+"events":{
+  "equiper:selle":{"add":{"component_groups":["a_selle"]}},
+  "fin:selle":{"remove":{"component_groups":["a_selle"]}},
+  "debuter:compagnion":{"add": {"component_groups": ["est_compagnion"]},"remove":{"component_groups":["est_explorateur"]}}, 
+  "fin:compagnion":{"remove": {"component_groups": ["est_compagnion"]},"add":{"component_groups":["est_explorateur"]}},
+  "debuter:apprivoiser" :{"remove": { "component_groups": [ "est_sauvage"] },"add": { "component_groups": ["est_apprivoiser","est_compagnion"] }  },
+  "debuter:viellir" :{ "remove": { "component_groups": [ "est_bebe" ] },"add": { "component_groups": [ "est_adulte" ] }},
+
+  "equiper:cuire" :{"add": { "component_groups": [ "armure_cuire","armure_support" ] },"remove": { "component_groups": [ "est_vie" ] }}, 
+  "equiper:fer" :{ "add": { "component_groups": [ "armure_fer","armure_support" ] },"remove": { "component_groups": [ "est_vie" ] }},
+  "equiper:or" :{"add": { "component_groups": [ "armure_or","armure_support" ] },"remove": { "component_groups": [ "est_vie" ] }},
+  "equiper:diamand" :{"add": { "component_groups": [ "armure_diamand","armure_support" ] },"remove": { "component_groups": [ "est_vie" ] }},
+  "equiper:copper" :{"add": { "component_groups": [ "armure_copper","armure_support" ] },"remove": { "component_groups": [ "est_vie" ] }},
+  "equiper:netherite" :{"add": { "component_groups": [ "armure_netherite","armure_support" ] },"remove": { "component_groups": [ "est_vie" ] }},
+  "fin:armure":{"remove": { "component_groups": [ "armure_cuire","armure_fer","armure_or","armure_diamand","armure_copper","armure_netherite","armure_support" ] },"add": { "component_groups": [ "est_vie" ] }},
+
+  "natural_generation.jaune":{"add":{"component_groups":["est_adulte","est_sauvage","est_vie","var_jaune","est_type0"] } },
+  "natural_generation.rouge":{"add":{"component_groups":["est_adulte","est_sauvage","est_vie","var_rouge","est_type1"] } },
+  "natural_generation.bleu":{"add":{"component_groups":["est_adulte","est_sauvage","est_vie","var_bleu","est_type2"] } },
+
+  "minecraft:entity_spawned":{
+      "sequence": [
+          {"add": 
+              {"component_groups": ["est_adulte","est_sauvage","est_vie","famille_sauvage"]}},
+          {"randomize": [
+              {"weight":33,"add": { "component_groups": ["var_jaune","est_type0"] } },
+              {"weight":33,"add": { "component_groups": ["var_rouge","est_type1"] } },
+              {"weight":33,"add": { "component_groups": ["var_bleu","est_type2"] } }
+              ]
+          }
+      ]
+  },
+
+  "naissance:type": {
+    "sequence": 
+  [
+    {"add": { "component_groups": [ "est_bebe","est_vie","est_sauvage" ] },"remove": { "component_groups": [ "est_type0","est_type1","est_type2","est_type3"] }
+    },  
+    {
+      "filters": {"all_of": [
+        {"test":"is_skin_id", "subject":"other","value": 0 },
+        {"test":"has_biome_tag","operator":"not","value": "crimson_forest"}]}, "add": { "component_groups": [ "est_type0"] }
+    },
+    {
+      "filters": {"all_of": [
+         {"test":"is_skin_id", "subject":"other","value": 0 },
+         {"test":"has_biome_tag","operator":"not","value": "swamp"}]}, "add": { "component_groups": [ "est_type0"] }
+    },
+    {
+      "filters": {"all_of": [
+        {"test":"is_skin_id", "subject":"other","value": 0 },
+        {"test":"has_biome_tag","operator":"=","value": "crimson_forest"}]}, "add": { "component_groups": [ "est_type1"] }
+    },
+    {
+      "filters": {"all_of": [
+        {"test":"is_skin_id", "subject":"other","value": 0 },
+        {"test":"has_biome_tag","operator":"=","value": "swamp"}]}, "add": { "component_groups": [ "est_type2"] }
+    },
+    {
+      "filters": {"all_of": [
+        {"test":"is_skin_id", "subject":"other","value": 1 },
+        {"test":"has_biome_tag","operator":"not","value": "plains"}]}, "add": { "component_groups": [ "est_type1"] }
+    },
+    {"filters": {"all_of": [
+        {"test":"is_skin_id", "subject":"other","value": 1 },
+        {"test":"has_biome_tag","operator":"not","value": "swamp"}]}, "add": { "component_groups": [ "est_type1"] }
+    },
+    {
+      "filters": {"all_of": [
+        {"test":"is_skin_id", "subject":"other","value": 1 },
+        {"test":"has_biome_tag","operator":"=","value": "plains"}]}, "add": { "component_groups": [ "est_type0"] }
+    },
+    {
+      "filters": {"all_of": [
+        {"test":"is_skin_id", "subject":"other","value": 1 },
+        {"test":"has_biome_tag","operator":"=","value": "swamp"}]}, "add": { "component_groups": [ "est_type2"] }
+    },
+    {
+      "filters": {"all_of": [
+        {"test":"is_skin_id", "subject":"other","value": 2 },
+        {"test":"has_biome_tag","operator":"not","value": "crimson_forest"}]}, "add": { "component_groups": [ "est_type2"] }
+  },
+  {
+    "filters": {"all_of": [
+        {"test":"is_skin_id", "subject":"other","value": 2 },
+        {"test":"has_biome_tag","operator":"not","value": "plains"}]}, "add": { "component_groups": [ "est_type2"] }
+  },
+  {
+    "filters": {"all_of": [
+        {"test":"is_skin_id", "subject":"other","value": 2 },
+        {"test":"has_biome_tag","operator":"==","value": "crimson_forest"}]}, "add": { "component_groups": [ "est_type1"] }
+  },
+  {
+  "filters": {"all_of": [
+      {"test":"is_skin_id", "subject":"other","value": 2 },
+      {"test":"has_biome_tag","operator":"==","value": "plains"}]}, "add": { "component_groups": [ "est_type0"] }
+  }
+  ]
+}
+
+
+},
+
+"components":{
+  
+  "minecraft:loot": {"table": "loot_tables/choco.json"},
+  "minecraft:behavior.melee_attack": {"priority": 3},
+  "minecraft:scale": {"value":0.80},
+  "minecraft:movement.basic": {},
+  "minecraft:can_power_jump": {},
+  "minecraft:collision_box": { "width": 1.5,"height": 3 },
+  "minecraft:breathable": { "total_supply": 15,"suffocate_time": 0 },
+  "minecraft:nameable": {},
+  "minecraft:behavior.float": {"priority": 5},
+  "minecraft:physics": {},
+  "minecraft:can_climb": {},
+  "minecraft:jump.static": {},
+  "minecraft:block_climber": {},
+  "minecraft:behavior.player_ride_tamed": {},
+  "minecraft:pushable": {"is_pushable": true,"is_pushable_by_piston": true},
+  "minecraft:behavior.raid_garden": {"priority": 5,"blocks": ["minecraft:carrots","pxq:gysahl_jaune"]},
+  "minecraft:experience_reward": {"on_bred": "Math.Random(1,7)","on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"},
+  "minecraft:behavior.avoid_mob_type": {"priority": 1,"entity_types":[
+    {
+      "filters": { "test" :  "is_family", "subject" : "other", "value" :  "creeper"},
+      "max_dist": 10,
+      "walk_speed_multiplier": 2,
+      "sprint_speed_multiplier": 2
+    }
+    ]
+  },
+  "minecraft:navigation.walk": {
+      "can_jump":true ,
+      "avoid_damage_blocks": false,
+      "can_path_over_water": true,
+      "can_break_doors":true,
+      "avoid_water": true ,
+      "avoid_portals": true
+    },
+  "minecraft:breedable": {
+      "require_tame": false,
+      "breed_items": "pxq:gysahl.jaune",
+      "breeds_with": {
+      "mate_type": "pxq:chocobo",
+      "baby_type": "pxq:chocobo",
+      "breed_event": {"event": "naissance:type","target": "baby"}
+      }
+    },
+  "minecraft:tameable": {
+        "probability": 0.33,
+        "tame_items": "pxq:gysahl.or",
+        "tame_event": {"event": "debuter:apprivoiser","target": "self"}
+    }
+
+}
+
+}
+}

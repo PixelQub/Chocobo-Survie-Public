@@ -1,0 +1,17 @@
+﻿
+##-seeds-##
+item.pxq:graine.jaune=Graine Gysahl Jaune
+
+##-Fruit-##
+item.pxq:gysahl.jaune=Gysahl Jaune
+item.pxq:gysahl.or=Gysahl Or
+
+##-Nouriture-##
+item.pxq:cuisse.choco=Cuisse de chocobo
+item.pxq:cuite.cuisse.choco=Cuisse de chocobo cuite
+item.pxq:curry.choco=Curry de chocobo
+
+##-Entity-##
+item.spawn_egg.entity.pxq:chocobo.name=Spawn Chocobo 
+
+entity.pxq:chocobo.name=Chocobo

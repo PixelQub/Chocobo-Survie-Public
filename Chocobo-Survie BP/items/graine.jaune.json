@@ -1,0 +1,38 @@
+
+{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "pxq:graine.jaune",
+			"menu_category": {
+			"category": "nature",
+			"group":"itemGroup.name.seed"
+			}
+		},
+		"components": {
+			"minecraft:icon": {
+				"textures": {
+					"default":"graine.jaune"
+				}
+			},
+			"minecraft:display_name": {
+				"value": "Graine jaune"
+			},
+      "minecraft:block_placer": {
+        "block": "pxq:gysahl_jaune",
+        "use_on": [
+          "minecraft:oak_leaves",
+          "minecraft:spruce_leaves",
+          "minecraft:birch_leaves",
+          "minecraft:jungle_leaves",
+          "minecraft:acacia_leaves",
+          "minecraft:dark_oak_leaves",
+          "minecraft:mangrove_leaves",
+          "minecraft:azalea_leaves",
+          "minecraft:cherry_leaves"
+        ]
+      }
+
+		}
+	}
+  }

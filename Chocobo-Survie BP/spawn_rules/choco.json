@@ -1,0 +1,39 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:spawn_rules": {
+    "description": {
+      "identifier": "pxq:chocobo",
+      "population_control": "animal"
+    },
+    "conditions": [
+      {
+        "minecraft:spawns_on_surface":{},
+        "minecraft:brightness_filter":{"min":7,"max":15,"adjust_for_weather": false},
+        "minecraft:weight": {"default": 1},
+        "minecraft:herd": [{"min_size":1, "max_size":1, "event":"natural_generation.jaune"}],
+        "minecraft:biome_filter": {"test": "has_biome_tag", "operator":"==", "value": "taiga"}
+      },
+      {
+        "minecraft:spawns_underground":{},
+
+        "minecraft:weight": {
+          "default": 1
+        },
+        "minecraft:herd": [{"min_size":1, "max_size":1, "event":"natural_generation.rouge"}],
+        "minecraft:biome_filter": {
+          "test": "has_biome_tag",
+          "operator": "==",
+          "value": "crimson_forest"
+        }
+      },
+
+      {
+        "minecraft:spawns_on_surface":{},
+        "minecraft:brightness_filter":{"min":7,"max":15,"adjust_for_weather": false},
+        "minecraft:weight": {"default": 2},
+        "minecraft:herd": [{"min_size":1, "max_size":1, "event":"natural_generation.bleu"}],
+        "minecraft:biome_filter": {"test": "has_biome_tag", "operator":"==", "value": "swamp"}
+      }
+    ]
+  }
+}

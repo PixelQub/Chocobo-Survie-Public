@@ -1,0 +1,17 @@
+{
+	"resource_pack_name": "vanilla",
+	"texture_name": "atlas.items",
+	"texture_data": {
+
+
+		"oeuf.choco":{"textures":"textures/items/oeuf.choco"},
+		"cuisse.choco":{"textures":"textures/items/cuisse.choco"},
+		"cuite.cuisse.choco":{"textures":"textures/items/cuite.cuisse.choco"},
+
+
+        "gysahl.jaune": {"textures": "textures/items/gysahl.jaune"},
+        "gysahl.or": {"textures": "textures/items/gysahl.or"},
+        "graine.jaune": {"textures":"textures/items/graine.jaune"}
+
+  }
+}

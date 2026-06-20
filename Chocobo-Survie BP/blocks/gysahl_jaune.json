@@ -1,0 +1,80 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "pxq:gysahl_jaune",
+      "menu_category": { "category": "none" },
+      "states": { "pxq:sequence.plante": [0, 1, 2, 3, 4] }
+    },
+    "components": {
+      "minecraft:geometry": "geometry.cube_fruit",
+      "minecraft:custom_components": ["pxq:custom_crop_growth"],
+      "minecraft:loot": "loot_tables/blocks/gysahl_jaune.json",
+      "minecraft:friction": 0.6,
+      "minecraft:map_color": "#000000",
+      "minecraft:flammable": { "flame_odds": 50, "burn_odds": 0 },
+      "minecraft:light_emission": 1,
+"minecraft:placement_filter": {
+  "conditions": [
+    {
+      "block_filter": [
+        "minecraft:oak_leaves",
+        "minecraft:spruce_leaves",
+        "minecraft:birch_leaves",
+        "minecraft:jungle_leaves",
+        "minecraft:acacia_leaves",
+        "minecraft:dark_oak_leaves",
+        "minecraft:mangrove_leaves",
+        "minecraft:azalea_leaves",
+        "minecraft:cherry_leaves"
+      ],
+      "allowed_faces": ["down"]
+    }
+  ]
+}
+
+    },
+    "permutations": [
+      {
+        "condition": "query.block_state('pxq:sequence.plante') == 0",
+        "components": {
+          "minecraft:material_instances": {
+            "*": { "texture": "sequence.gysah.jaune.0", "render_method": "alpha_test" }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('pxq:sequence.plante') == 1",
+        "components": {
+          "minecraft:material_instances": {
+            "*": { "texture": "sequence.gysah.jaune.1", "render_method": "alpha_test" }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('pxq:sequence.plante') == 2",
+        "components": {
+          "minecraft:material_instances": {
+            "*": { "texture": "sequence.gysah.jaune.2", "render_method": "alpha_test" }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('pxq:sequence.plante') == 3",
+        "components": {
+          "minecraft:material_instances": {
+            "*": { "texture": "sequence.gysah.jaune.3", "render_method": "alpha_test" }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('pxq:sequence.plante') == 4",
+        "components": {
+          "minecraft:material_instances": {
+            "*": { "texture": "sequence.gysah.jaune.4", "render_method": "alpha_test" }
+          }
+        }
+      }
+    ]
+  }
+}

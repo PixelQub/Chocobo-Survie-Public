@@ -1,0 +1,30 @@
+{ 
+  "entity_sounds": {
+    "entities": {
+      "pxq:chocobo": {
+        "volume": 0.8,
+        "pitch": [ 0.8, 1.2 ],
+        "events": {
+          "ambient": "mob.choco.hurt",
+          "death": "mob.choco.death",
+          "hurt": "mob.choco.hurt",
+          "step": {
+            "sound": "mob.llama.step",
+            "volume": 0.15,
+            "pitch": 1.0
+          },
+          "armor": {
+            "sound": "mob.horse.armor",
+            "volume": 0.5,
+            "pitch": 1.0
+          },
+          "add.chest": {
+            "sound": "mob.horse.armor",
+            "volume": 1.0,
+            "pitch": [ 0.8, 1.2 ]
+          }
+        }
+      }
+    }
+  }
+}

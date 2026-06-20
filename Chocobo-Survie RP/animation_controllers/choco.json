@@ -1,0 +1,50 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.choco": {
+			"initial_state": "idle",
+			"states": {
+				"idle": {
+					"animations": [
+						"idle"
+					],
+					"blend_transition": 0.1
+,
+					"transitions": [
+						{
+							"walking": "query.ground_speed"
+						}
+					]
+				},
+				"walking": {
+					"animations": [
+						"walk"
+					],
+					"blend_transition": 0.1,
+					"transitions": [
+						{
+							"idle": "!query.ground_speed"
+						},
+						{
+							"flying": "!query.is_on_ground >= 1"
+						}
+
+					]
+				},
+				"flying": {
+					"animations": [
+						"fly"
+					],
+					"blend_transition": 0.1
+,
+					"transitions": [
+						{
+							"walking": "query.is_on_ground"
+						}
+
+					]
+				}
+			}
+		}
+	}
+}

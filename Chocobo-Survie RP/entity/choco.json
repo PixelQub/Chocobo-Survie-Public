@@ -1,0 +1,44 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "pxq:chocobo",
+"spawn_egg": {
+  "texture": "oeuf.choco"
+}
+,
+			"materials": {
+				"default": "villager_v2_masked"
+			},
+			"textures": {
+				"base_1": "textures/choco/jaune",
+				"base_2": "textures/choco/rouge",
+				"base_3": "textures/choco/bleu",
+				"armure_1": "textures/choco/cuir",
+				"armure_2": "textures/choco/fer",
+				"armure_3": "textures/choco/or",
+				"armure_4": "textures/choco/diamand",
+				"armure_5": "textures/choco/copper",
+				"armure_6": "textures/choco/netherite"
+			},
+			"render_controllers": [
+				"controller.render.choco"
+			],
+			"geometry": {
+				"default": "geometry.choco",
+				"armure": "geometry.choco.armure"
+			},
+			"animations": {
+				"walk": "animation.choco.walk",
+				"idle": "animation.choco.idle",
+				"fly": "animation.choco.fly",
+				"controller": "controller.animation.choco"
+			},
+			"scripts": {
+				"animate": [
+					"controller"
+				]
+			}
+		}
+	}
+}
